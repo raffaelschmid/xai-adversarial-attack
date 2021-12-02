@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
+import shap
 from numpy import sum, unique, empty_like
+from numpy.random import choice
 from pandas import DataFrame
 from seaborn import heatmap
 from sklearn.metrics import confusion_matrix
@@ -30,3 +32,10 @@ def plot_confusion_matrix(y_true, y_pred, figsize=(10, 10)):
     cm.columns.name = 'Actual'
     fig, ax = plt.subplots(figsize=figsize)
     heatmap(cm, cmap="YlGnBu", annot=annot, fmt='', ax=ax)
+
+
+def plot_shap(model, x_reshaped, elements=7, population=100):
+    background = x_reshaped[choice(x_reshaped.shape[0], population, replace=False)]
+    explainer = shap.DeepExplainer(model, background)
+    shap_values = explainer.shap_values(x_reshaped[1:elements])
+    shap.image_plot(shap_values, -x_reshaped[1:elements])
