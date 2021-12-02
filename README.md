@@ -19,4 +19,28 @@ statements `import src.reporting` nor to deviate from Pip defaults.
 | /notebooks     | Jupyter notebooks are stored in the eda (Exploratory Data Analysis), modeling (Modeling) and evaluation (Evaluation) directories.                          |
 | /preprocessing | Extracted Python code that is used during data preprocessing.                                                                                              |
 | /reporting     | Extracted Python code that is used during reporting.                                                                                                       |
-| /tests         | Module tests                                    
+| /tests         | Module tests
+
+## Development
+
+### Setup
+
+1. Install virtual environment in .venv
+
+```
+<python-home>/bin/python -m venv .venv
+~/.pyenv/versions/3.6.9/bin/python -m venv .venv
+source ./.venv/bin/activate
+```
+
+2. Activate .venv
+
+```
+source ./.venv/bin/activate
+```
+
+3. Install requirements
+
+```
+pip install -r requirements.txt 
+```

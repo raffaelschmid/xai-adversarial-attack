@@ -19,8 +19,8 @@ def build():
 def build_compile_fit(x, y, epochs=5, optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy']):
     model = build()
     model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
-    model.fit(x=x, y=y, epochs=epochs)
-    return model
+    history = model.fit(x=x, y=y, epochs=epochs)
+    return (model, history)
 
 
 def reshape_input(x, y):
