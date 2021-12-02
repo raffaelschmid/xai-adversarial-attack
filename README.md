@@ -11,15 +11,15 @@ befound [here](https://towardsdatascience.com/manage-your-data-science-project-s
 with a the exception that source files are not located in /src folder. The reason for this is to not have src in import
 statements `import src.reporting` nor to deviate from Pip defaults.
 
-| Folder         | Description                                                                                                                                                |
-|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /data          | Storage location for data. Raw data is downloaded to raw, after processing stored to processed. Trained models are stored in model subdirectory.           |
-| /docs          | Documentation that is not part of the code.                                                                                                                |
-| /models        | Location for model definitions.                                                                                                                            |
-| /notebooks     | Jupyter notebooks are stored in the eda (Exploratory Data Analysis), modeling (Modeling) and evaluation (Evaluation) directories.                          |
-| /preprocessing | Extracted Python code that is used during data preprocessing.                                                                                              |
-| /reporting     | Extracted Python code that is used during reporting.                                                                                                       |
-| /tests         | Module tests
+| Folder         | Description                                                                                                                                      |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| /data          | Storage location for data. Raw data is downloaded to raw, after processing stored to processed. Trained models are stored in model subdirectory. |
+| /docs          | Documentation that is not part of the code.                                                                                                      |
+| /models        | Location for model definitions.                                                                                                                  |
+| /notebooks     | Jupyter notebooks are stored in the eda (Exploratory Data Analysis), modeling (Modeling) and evaluation (Evaluation) directories.                |
+| /preprocessing | Extracted Python code that is used during data preprocessing.                                                                                    |
+| /reporting     | Extracted Python code that is used during reporting.                                                                                             |
+| /tests         | Module tests                                                                                                                                     |
 
 ## Development
 
@@ -30,7 +30,6 @@ statements `import src.reporting` nor to deviate from Pip defaults.
 ```
 <python-home>/bin/python -m venv .venv
 ~/.pyenv/versions/3.6.9/bin/python -m venv .venv
-source ./.venv/bin/activate
 ```
 
 2. Activate .venv
