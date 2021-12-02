@@ -26,5 +26,6 @@ def build_compile_fit(x, y, epochs=5, optimizer='adam', loss='sparse_categorical
 def reshape_input(x, y):
     no_elements = x.shape[0]
     images = x.apply(Series).stack().to_numpy().reshape(no_elements, 28, 28, 1)
+    images /= 255
     labels = y
     return (images, labels)

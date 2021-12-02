@@ -13,4 +13,5 @@ def load_test_data():
 
 def _load_data(path):
     data = read_parquet(path)
-    return (data.image, data.label)
+    images = data.image
+    return (images, data.label)
