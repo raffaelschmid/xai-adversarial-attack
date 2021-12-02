@@ -15,6 +15,11 @@ def build():
     model.add(Dense(10, activation=tf.nn.softmax))
     return model
 
+def build_compile_fit_dataset(dataset, epochs=5, optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy']):
+    model = build()
+    model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
+    history = model.fit(dataset, epochs=epochs)
+    return (model, history)
 
 def build_compile_fit(x, y, epochs=5, optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy']):
     model = build()
@@ -23,9 +28,9 @@ def build_compile_fit(x, y, epochs=5, optimizer='adam', loss='sparse_categorical
     return (model, history)
 
 
-def reshape_input(x, y):
+def reshape_input(x, y, normalize=True):
     no_elements = x.shape[0]
     images = x.apply(Series).stack().to_numpy().reshape(no_elements, 28, 28, 1)
-    images /= 255
-    labels = y
-    return (images, labels)
+    if normalize:
+        images /= 255
+    return (images, y)
