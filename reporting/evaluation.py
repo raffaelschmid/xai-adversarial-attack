@@ -26,7 +26,7 @@ def plot_confusion_matrix(y_true, y_pred, figsize=(10, 10)):
             else:
                 annot[i, j] = '%.1f%%\n%d' % (p, c)
     cm = DataFrame(cm, index=unique(y_true), columns=unique(y_true))
-    cm.index.name = 'Actual'
-    cm.columns.name = 'Predicted'
+    cm.index.name = 'Predicted'
+    cm.columns.name = 'Actual'
     fig, ax = plt.subplots(figsize=figsize)
     heatmap(cm, cmap="YlGnBu", annot=annot, fmt='', ax=ax)
