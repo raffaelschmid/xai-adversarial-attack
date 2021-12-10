@@ -8,3 +8,5 @@ data_test = f"{root_dir}/data/raw/mnist_normalized_test.parq"
 
 model_convolutional = f"{root_dir}/data/model/convolutional"
 model_convolutional_dataset = f"{root_dir}/data/model/convolutional_dataset"
+
+adversarial_images = f"{root_dir}/data/processed/adversarial_images.parq"
