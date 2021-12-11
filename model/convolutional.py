@@ -15,11 +15,14 @@ def build():
     model.add(Dense(10, activation=tf.nn.softmax))
     return model
 
-def build_compile_fit_dataset(dataset, epochs=5, optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy']):
+
+def build_compile_fit_dataset(dataset, epochs=5, optimizer='adam', loss='sparse_categorical_crossentropy',
+                              metrics=['accuracy']):
     model = build()
     model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
     history = model.fit(dataset, epochs=epochs)
-    return (model, history)
+    return model, history
+
 
 def build_compile_fit(x, y, epochs=5, optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy']):
     model = build()
