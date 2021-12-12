@@ -1,4 +1,7 @@
+import warnings
+
 import matplotlib.pyplot as plt
+import numpy as np
 import shap
 from numpy import sum, unique, empty_like
 from numpy.random import choice
@@ -34,8 +37,37 @@ def plot_confusion_matrix(y_true, y_pred, figsize=(10, 10)):
     heatmap(cm, cmap="YlGnBu", annot=annot, fmt='', ax=ax)
 
 
-def plot_shap(model, x_reshaped, elements=7, population=100, labels=None):
-    background = x_reshaped[choice(x_reshaped.shape[0], population, replace=False)]
-    explainer = shap.DeepExplainer(model, background)
-    shap_values = explainer.shap_values(x_reshaped[1:elements])
-    shap.image_plot(shap_values, -x_reshaped[1:elements], labels=labels)
+def plot_shap(model, data, labels=None, file=None):
+    """
+    Generates shap plot based on given model and input. If file is provided then file is persisted.
+    """
+
+    explainer = shap.DeepExplainer(model, data)
+    shap_values = explainer.shap_values(data)
+
+    shap.image_plot(shap_values, -data, labels=labels, show=file is None)
+
+    if file:
+        plt.savefig(file)
+
+
+def first_occurence(data):
+    """
+    Returns the array indexes of first occurences of each digit. I.E. it returns at which position the first 0 occurecs,
+    followed by the first 1, 2, 3, 4, 5, 6, 7, 8, 9.
+
+    :param data:
+    :return:
+    """
+    return np.array([
+        data[data == 0].first_valid_index(),
+        data[data == 1].first_valid_index(),
+        data[data == 2].first_valid_index(),
+        data[data == 3].first_valid_index(),
+        data[data == 4].first_valid_index(),
+        data[data == 5].first_valid_index(),
+        data[data == 6].first_valid_index(),
+        data[data == 7].first_valid_index(),
+        data[data == 8].first_valid_index(),
+        data[data == 9].first_valid_index(),
+    ])

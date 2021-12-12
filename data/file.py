@@ -10,3 +10,8 @@ model_convolutional = f"{root_dir}/data/model/convolutional"
 model_convolutional_dataset = f"{root_dir}/data/model/convolutional_dataset"
 
 adversarial_images = f"{root_dir}/data/processed/adversarial_images.parq"
+
+shap_original = f"{root_dir}/data/processed/shap/original.png"
+shap_original_missmatches = f"{root_dir}/data/processed/shap/original_missmatches.png"
+shap_original_label = f"{root_dir}/data/processed/shap/original_missmatches.parquet"
+

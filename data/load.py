@@ -3,6 +3,12 @@ from pandas import read_parquet, Series
 from data import file
 
 
+def load_adversarial_images():
+    data = read_parquet(file.adversarial_images)
+    images = data.image.apply(Series).stack().to_numpy().reshape(data.shape[0], 28, 28, 1)
+    return images, data.label, data.prediction
+
+
 def load_train_dataset(normalize=False):
     """
     Load training data and reshape it to array of (#images, 28, 28, 1) where 28x28 is the image size and 1 channel due to
