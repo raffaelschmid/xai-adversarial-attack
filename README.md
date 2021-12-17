@@ -6,56 +6,37 @@ The purpose of this project was to accomplish an assignment that was given durin
 
 ## Project
 
-### Introduction
+The idea of this project is to train a model (CNN) based on the handwritten digits dataset (MNIST) in order execute an 
+XAI analysis based on SHAP. Afterwards adversarial images should be generated and analysed in order to understand
+how the model prediction differs.
 
-Twenty years from now nearly everything will be powered by some a Machine Learning based model (cars, planes, companies,
-etc.). Over time it will get more and more interesting to trick those models by executing Adversarial Attacks which
-means to change input to fool the model. Likewise, it will be important to make models against this kind of malicious
-attacks.
+The content of this project is split across several Jupyter Notebooks:
+1. Modelling
+   1. [Preprocessing](./notebook/modeling/00_preprocessing.ipynb)
+   2. [Training](./notebook/modeling/01_train_model.ipynb)
+2. Evaluation
+   1. [Confusion Matrix](./notebook/evaluation/01_confusion_matrix.ipynb)
+   2. [Explanation SHAP](./notebook/evaluation/02_explain_shap_original.ipynb)
+   3. [Adversarial Image Generation](./notebook/evaluation/03_adversarial_images_generation_fgsm.ipynb)
+   4. [Explanation SHAP Adversarial Images](./notebook/evaluation/04_explain_shap_adversarial_images.ipynb)
+3. Summary
+   1. [Reflexion](./notebook/summary/01_reflexion.ipynb)
+   2. [References](./notebook/summary/02_references.ipynb)
 
-### Idea
+## Development
 
-The idea of this project is to train a model based of the handwritten digits dataset (MNIST) and analyze some of the
-images using an explainer method out of the course. MNIST (Modified National Institute of Standards and Technology) is a
-large database of handwritten digits that is commonly used for training various image processing systems. Afterwards I
-will choose an algorithm to generate Adversarial images and try to trick the image classifier based on the newly
-generated dataset.
-
-### Procedure
-
-1. Train a Model using Tensorflow and the MNIST dataset
-2. Analyze some images in the validation set using an explainer methodology covered in the course (LIME, SHAP, …)
-3. Search method to generate Adversarial Images that let the performance (recall) of the model go down.
-4. Analyze the resulting Adversarial Images using previously selected explainer methodology
-
-### Resources
-
-| Title                                                                                                           | Description                                                                    | Source     |
-|-----------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|------------|
-| [Adversarial exaple using FGSM](https://www.tensorflow.org/tutorials/generative/adversarial_fgsm)               | Tutorial creates an adversial example using Fast Gradient Signed Method (FGSM) | Tensorflow |
-| [Cleverhans Tutorial](https://github.com/cleverhans-lab/cleverhans/blob/master/tutorials/tf2/mnist_tutorial.py) | Cleverhans is a tool for benchmarking machine learning systems                 | Cleverhans |
-| [Adversarial Machine Learning](https://en.wikipedia.org/wiki/Adversarial_machine_learning)                      | Adversarial Machine Learning Wikipedia Article                                 | Wikipedia  |
-
-## Project Structure
-
-The **project structure** follows the directory convention that can
-befound [here](https://towardsdatascience.com/manage-your-data-science-project-structure-in-early-stage-95f91d4d0600)
-with a the exception that source files are not located in /src folder. The reason for this is to not have src in import
-statements `import src.reporting` nor to deviate from Pip defaults.
+###  Folder Structure
+The project structure is as follows
 
 | Folder         | Description                                                                                                                                      |
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
 | /data          | Storage location for data. Raw data is downloaded to raw, after processing stored to processed. Trained models are stored in model subdirectory. |
-| /docs          | Documentation that is not part of the code.                                                                                                      |
 | /models        | Location for model definitions.                                                                                                                  |
 | /notebooks     | Jupyter notebooks are stored in the eda (Exploratory Data Analysis), modeling (Modeling) and evaluation (Evaluation) directories.                |
-| /preprocessing | Extracted Python code that is used during data preprocessing.                                                                                    |
 | /reporting     | Extracted Python code that is used during reporting.                                                                                             |
-| /tests         | Module tests        <br/>                                                                                                                             |
 
-## Development
 
-### Setup
+### Environment Setup
 
 1. Install virtual environment in .venv
 
