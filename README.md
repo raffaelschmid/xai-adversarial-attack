@@ -16,8 +16,10 @@ attacks.
 ### Idea
 
 The idea of this project is to train a model based of the handwritten digits dataset (MNIST) and analyze some of the
-images using an explainer method out of the course. Afterwards I will choose an algorithm to generate Adversarial images
-and try to trick the image classifier based on the newly generated dataset.
+images using an explainer method out of the course. MNIST (Modified National Institute of Standards and Technology) is a
+large database of handwritten digits that is commonly used for training various image processing systems. Afterwards I
+will choose an algorithm to generate Adversarial images and try to trick the image classifier based on the newly
+generated dataset.
 
 ### Procedure
 
@@ -27,6 +29,7 @@ and try to trick the image classifier based on the newly generated dataset.
 4. Analyze the resulting Adversarial Images using previously selected explainer methodology
 
 ### Resources
+
 | Title                                                                                                           | Description                                                                    | Source     |
 |-----------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|------------|
 | [Adversarial exaple using FGSM](https://www.tensorflow.org/tutorials/generative/adversarial_fgsm)               | Tutorial creates an adversial example using Fast Gradient Signed Method (FGSM) | Tensorflow |
