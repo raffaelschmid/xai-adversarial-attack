@@ -37,19 +37,25 @@ def plot_confusion_matrix(y_true, y_pred, figsize=(10, 10)):
     heatmap(cm, cmap="YlGnBu", annot=annot, fmt='', ax=ax)
 
 
-def plot_shap(model, data, labels=None, file=None):
+def random_sample(arr: np.array, size: int = 1) -> np.array:
+    return arr[np.random.choice(len(arr), size=size, replace=False)]
+
+
+def plot_shap(model, data, background=[], labels=None, file=None):
     """
     Generates shap plot based on given model and input. If file is provided then file is persisted.
     """
 
-    explainer = shap.DeepExplainer(model, data)
+    if len(background) == 0:
+        background = data
+
+    explainer = shap.DeepExplainer(model, background)
     shap_values = explainer.shap_values(data)
 
     shap.image_plot(shap_values, -data, labels=labels, show=file is None)
 
     if file:
         plt.savefig(file)
-
 
 def first_occurence(data):
     """
