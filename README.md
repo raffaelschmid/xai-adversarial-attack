@@ -6,9 +6,9 @@ The purpose of this project was to accomplish an assignment that was given durin
 
 ## Project
 
-The primary goal of the project is to make SHAP based explanations for a model that was trained for predicting digits
-based on MNIST images. Afterwards adversarial images are generated in order to analyze and discover resulting
-miss-predictions again using SHAP.
+**The primary goal of the project is to make SHAP based explanations for a model that was trained based on MNIST**.
+MNIST (Modified National Institute of Standards and Technology) is a large database of handwritten digits. **Afterwards
+adversarial images are generated in order to analyze the changes in prediction using SHAP.**
 
 The content of this project is aligned as follows:
 
