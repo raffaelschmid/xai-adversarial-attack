@@ -1,10 +1,10 @@
 # Explainable AI - Adversarial Attack
 
-The project is hosted [here](https://github.com/raffaelschmid/xai-adversarial-attack)
-
 The purpose of this project was to accomplish an assignment given
 during [Explainable AI](https://www.fhnw.ch/de/weiterbildung/technik/explainable-ai) course at
 [FHNW](https://www.fhnw.ch).
+
+The project can be easily viewed [here](https://github.com/raffaelschmid/xai-adversarial-attack)
 
 ## Project
 
