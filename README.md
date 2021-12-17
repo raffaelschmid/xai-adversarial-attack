@@ -1,15 +1,15 @@
 # Explainable AI - Adversarial Attack
+
 The project is hosted [here](https://github.com/raffaelschmid/xai-adversarial-attack)
 
-The purpose of this project was to accomplish an assignment that was given during the
-[Explainable AI](https://www.fhnw.ch/de/weiterbildung/technik/explainable-ai) course at
+The purpose of this project was to accomplish an assignment given
+during [Explainable AI](https://www.fhnw.ch/de/weiterbildung/technik/explainable-ai) course at
 [FHNW](https://www.fhnw.ch).
-
 
 ## Project
 
-The primary goal of the project is to make SHAP based explanations for a model that was trained based on MNIST.
-MNIST (Modified National Institute of Standards and Technology) is a large database of handwritten digits. Afterwards
+The primary goal of the project is to make SHAP based explanations for a model that was trained based on MNIST. MNIST (
+Modified National Institute of Standards and Technology) is a large database of handwritten digits. Afterwards
 adversarial images are generated in order to analyze the changes in prediction using SHAP.
 
 The content of this project is aligned as follows:
