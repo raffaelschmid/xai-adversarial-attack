@@ -10,7 +10,7 @@ The project can easily be viewed [here](https://github.com/raffaelschmid/xai-adv
 
 The primary goal of the project is to make SHAP based explanations for a model that was trained based on MNIST. MNIST (
 Modified National Institute of Standards and Technology) is a large database of handwritten digits. Afterwards
-adversarial images are generated in order to pin out model tolerance - again based on SHAP.
+adversarial images are generated in order to pin out model intolerance - again based on SHAP.
 
 The content of this project is aligned as follows:
 
